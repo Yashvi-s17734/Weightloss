@@ -1,0 +1,59 @@
+.dashboard {
+  @apply max-w-5xl mx-auto p-4 md:p-8 space-y-6;
+}
+
+.table-wrapper {
+  @apply overflow-x-auto bg-white rounded-lg shadow;
+}
+
+table {
+  @apply min-w-full text-sm;
+}
+
+th {
+  @apply bg-gray-200 p-3 text-left;
+}
+
+td {
+  @apply p-3 border-t;
+}
+
+.gain {
+  @apply text-red-500 font-semibold;
+}
+
+.loss {
+  .dashboard {
+    @apply max-w-5xl mx-auto p-4 md:p-8 space-y-6;
+  }
+  .table-wrapper {
+    @apply overflow-x-auto
+         bg-white/90 backdrop-blur
+         rounded-2xl shadow-lg;
+  }
+  table {
+    @apply min-w-full text-sm text-gray-700;
+  }
+
+  thead th {
+    @apply bg-[#ead9c3] text-[#6f4e37]
+         font-semibold p-4 text-left;
+  }
+
+  tbody tr {
+    @apply hover:bg-[#f7efe6] transition;
+  }
+
+  td {
+    @apply p-4 border-t border-[#e5d6c3];
+  }
+  .gain {
+    @apply text-red-600 font-semibold;
+  }
+
+  .loss {
+    @apply text-green-600 font-semibold;
+  }
+
+  @apply text-green-600 font-semibold;
+}

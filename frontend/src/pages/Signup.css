@@ -1,0 +1,44 @@
+.auth-bg {
+  @apply min-h-screen flex items-center justify-center
+         bg-[radial-gradient(circle_at_center,_#f5e6d8,_#e6c9a8)]
+         px-4;
+}
+
+.auth-card {
+  @apply w-full max-w-md bg-white/90 backdrop-blur
+         rounded-2xl p-6 shadow-xl;
+}
+
+.auth-tabs {
+  @apply flex rounded-lg overflow-hidden mb-6;
+}
+
+.auth-tabs button {
+  @apply flex-1 py-2 text-sm font-medium
+         bg-[#ead9c3] text-gray-700;
+}
+
+.auth-tabs .active {
+  @apply bg-[#b89462] text-white;
+}
+
+.auth-input {
+  @apply w-full border border-gray-300
+         rounded-lg px-4 py-2
+         focus:outline-none focus:ring-2
+         focus:ring-[#b89462];
+}
+
+.auth-btn {
+  @apply w-full bg-[#b89462] text-white
+         py-2 rounded-lg font-semibold
+         hover:bg-[#a67c45] transition;
+}
+.auth-link {
+  @apply text-center text-sm text-gray-600 mt-4;
+}
+
+.auth-link span {
+  @apply text-[#b89462] cursor-pointer font-medium
+         hover:underline transition;
+}

@@ -1,0 +1,19 @@
+.navbar {
+  @apply flex justify-between items-center
+         px-6 py-4
+         bg-white/80 backdrop-blur
+         shadow-md;
+}
+
+.logo {
+  @apply text-xl font-semibold
+         text-[#6f4e37];
+}
+
+.logout-btn {
+  @apply bg-[#b89462] text-white
+         px-4 py-2 rounded-lg
+         font-medium
+         hover:bg-[#a67c45]
+         transition;
+}
