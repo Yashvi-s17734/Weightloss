@@ -1,11 +1,26 @@
 const API_URL = "https://weightloss-oj47.onrender.com/api";
+
+const handleResponse = async (res) => {
+  const contentType = res.headers.get("content-type");
+
+  if (contentType && contentType.includes("application/json")) {
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || "Something went wrong");
+    }
+    return data;
+  } else {
+    throw new Error("Server error. Please try again.");
+  }
+};
+
 export const signup = async (data) => {
   const res = await fetch(`${API_URL}/auth/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  return res.json();
+  return handleResponse(res);
 };
 
 export const login = async (data) => {
@@ -14,7 +29,7 @@ export const login = async (data) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  return res.json();
+  return handleResponse(res);
 };
 
 export const addWeight = async (data) => {
@@ -27,7 +42,7 @@ export const addWeight = async (data) => {
     },
     body: JSON.stringify(data),
   });
-  return res.json();
+  return handleResponse(res);
 };
 
 export const getWeights = async () => {
@@ -37,5 +52,5 @@ export const getWeights = async () => {
       Authorization: `Bearer ${token}`,
     },
   });
-  return res.json();
+  return handleResponse(res);
 };

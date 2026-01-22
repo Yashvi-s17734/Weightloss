@@ -8,13 +8,15 @@ export default function Signup({ goLogin }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await signup({ email, password });
-    if (res.token) {
+
+    try {
+      await signup({ email, password });
       alert("Signup successful");
       goLogin();
-    } else alert(res.message);
+    } catch (err) {
+      alert(err.message);
+    }
   };
-
   return (
     <div className="auth-bg">
       <form className="auth-card" onSubmit={submit}>
