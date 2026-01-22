@@ -8,11 +8,14 @@ export default function WeightForm({ refresh }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await addWeight({ date, weight, description });
-    alert(res.message);
-    refresh();
+    try {
+      const res = await addWeight({ date, weight, description });
+      alert(res.message);
+      refresh();
+    } catch (err) {
+      alert(err.message);
+    }
   };
-
   return (
     <div className="weight-card">
       <h3 className="weight-title">Add Weight</h3>
