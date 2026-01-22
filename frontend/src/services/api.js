@@ -3,6 +3,11 @@ const API_URL = "https://weightloss-oj47.onrender.com/api";
 const handleResponse = async (res) => {
   const contentType = res.headers.get("content-type");
 
+  if (res.status === 401) {
+    localStorage.removeItem("token");
+    throw new Error("Session expired. Please login again.");
+  }
+
   if (contentType && contentType.includes("application/json")) {
     const data = await res.json();
     if (!res.ok) {
