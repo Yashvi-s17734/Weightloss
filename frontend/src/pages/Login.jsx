@@ -6,17 +6,18 @@ export default function Login({ goSignup, goDashboard }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const submit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await login({ email, password }); // ✅ FIX 1
-      alert("Login Successful");
-      localStorage.setItem("token", response.token);
-      goDashboard();
-    } catch (err) {
-      alert(err.message);
-    }
-  };
+ const submit = async (e) => {
+   e.preventDefault();
+   try {
+     const response = await login({ email, password }); 
+     localStorage.setItem("token", response.token); 
+     alert("Login Successful");
+     goDashboard();
+   } catch (err) {
+     alert(err.message);
+   }
+ };
+
 
   return (
     <div className="auth-bg">

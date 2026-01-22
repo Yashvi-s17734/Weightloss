@@ -9,12 +9,23 @@ export default function Dashboard({ onLogout }) {
 
   const loadData = async () => {
     try {
-      setWeights(await getWeights());
+      const data = await getWeights();
+      setWeights(data);
     } catch (err) {
       alert(err.message);
       onLogout();
     }
   };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      onLogout();
+      return;
+    }
+
+    loadData();
+  }, []);
 
   return (
     <>
