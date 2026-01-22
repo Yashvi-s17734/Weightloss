@@ -9,8 +9,8 @@ export default function Login({ goSignup, goDashboard }) {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      await login({ email, password });
-      alert("Login Successfull");
+      const response = await login({ email, password }); // ✅ FIX 1
+      alert("Login Successful");
       localStorage.setItem("token", response.token);
       goDashboard();
     } catch (err) {
@@ -21,9 +21,10 @@ export default function Login({ goSignup, goDashboard }) {
   return (
     <div className="auth-bg">
       <form className="auth-card" onSubmit={submit}>
-        {/* Tabs */}
         <div className="auth-tabs">
-          <button className="active">Login</button>
+          <button type="button" className="active">
+            Login
+          </button>{" "}
           <button type="button" onClick={goSignup}>
             Sign Up
           </button>
@@ -44,6 +45,7 @@ export default function Login({ goSignup, goDashboard }) {
 
           <button className="auth-btn">Login</button>
         </div>
+
         <p className="auth-link">
           Don’t have an account? <span onClick={goSignup}>Sign Up →</span>
         </p>
