@@ -5,6 +5,9 @@ app.use(cors());
 app.use(express.json());
 const authRoutes = require("./routes/authRoutes");
 const weightRoutes = require("./routes/weightRoutes");
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 app.get("/", (req, res) => {
   res.send("Weight Loss Api working");
 });
