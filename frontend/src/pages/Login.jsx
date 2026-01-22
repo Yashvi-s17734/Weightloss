@@ -11,6 +11,7 @@ export default function Login({ goSignup, goDashboard }) {
     try {
       await login({ email, password });
       alert("Login Successfull");
+      localStorage.setItem("token", response.token);
       goDashboard();
     } catch (err) {
       alert(err.message);
