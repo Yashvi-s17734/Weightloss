@@ -8,12 +8,13 @@ export default function Dashboard({ onLogout }) {
   const [weights, setWeights] = useState([]);
 
   const loadData = async () => {
-    setWeights(await getWeights());
+    try {
+      setWeights(await getWeights());
+    } catch (err) {
+      alert(err.message);
+      onLogout();
+    }
   };
-
-  useEffect(() => {
-    loadData();
-  }, []);
 
   return (
     <>
