@@ -21,6 +21,8 @@ exports.addWeight = async (req, res) => {
   }
 };
 exports.getWeights = async (req, res) => {
+  console.log("Querying weights for userId:", req.userId);
+
   try {
     const weights = await Weight.findAll({
       where: { userId: req.userId },
