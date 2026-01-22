@@ -21,7 +21,14 @@ function App() {
   return (
     <>
       {page === "signup" && <Signup goLogin={() => setPage("login")} />}
-      {page === "login" && <Login goDashboard={() => setPage("dashboard")} />}
+
+      {page === "login" && (
+        <Login
+          goDashboard={() => setPage("dashboard")}
+          goSignup={() => setPage("signup")}
+        />
+      )}
+
       {page === "dashboard" && <Dashboard onLogout={logout} />}
     </>
   );
