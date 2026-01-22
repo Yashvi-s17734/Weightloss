@@ -1,0 +1,11 @@
+.loader-backdrop {
+  @apply absolute inset-0 bg-white/70 rounded-xl
+         flex items-center justify-center;
+}
+
+.loader {
+  @apply w-12 h-12 rounded-full border-4
+         border-[#e6d5bc]
+         border-t-[#b89462]
+         animate-spin;
+}
