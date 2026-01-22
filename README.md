@@ -2,7 +2,7 @@
 
 A full-stack web application to track daily weight progress with authentication.
 
-## 🚀 Live Demo
+##  Live Demo
 
 Frontend: https://weightloss-ten.vercel.app  
 Backend API: https://weightloss-oj47.onrender.com
@@ -14,7 +14,7 @@ Backend API: https://weightloss-oj47.onrender.com
 - Database: MySQL (TiDB Cloud)
 - Authentication: JWT
 
-## ✨ Features
+##  Features
 
 - User Signup & Login
 - JWT Authentication
@@ -24,7 +24,7 @@ Backend API: https://weightloss-oj47.onrender.com
 - Protected APIs
 - Session handling
 
-## ⚙️ Run Locally
+##  Run Locally
 
 ### Backend
 
