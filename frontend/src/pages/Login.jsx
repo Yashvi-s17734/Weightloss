@@ -8,13 +8,12 @@ export default function Login({ goSignup, goDashboard }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await login({ email, password });
-
-    if (res.token) {
-      localStorage.setItem("token", res.token);
+    try {
+      await login({ email, password });
+      alert("Login Successfull");
       goDashboard();
-    } else {
-      alert(res.message);
+    } catch (err) {
+      alert(err.message);
     }
   };
 
